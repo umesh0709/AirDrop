@@ -1,0 +1,302 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+
+.navbar-text{
+    font-size: 20px;
+    font-weight: normal;
+    flex-grow: 1;
+    
+}
+
+
+
+.header-two{
+    width: 100%;
+   
+    padding: 80px 0px;
+    background-color: #1861ac;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.website-name{
+    position: center;
+    font-size: 1.5rem;
+    
+}
+
+nav {
+    /*border-bottom: 2px solid #595959;*/
+    background-color: #00010c;
+    border-bottom: .7px solid #595959;
+    
+}
+
+footer {
+    border-top: .7px solid #595959;
+}
+
+.nav-color{
+    background-color: #ccc;
+    opacity: .1;
+    z-index: -1;
+}
+/* Rectangle 1 */
+
+.news-bar {
+    position: absolute;
+    width: fit-content();
+    height: 30px;
+    margin-left: 2px;
+    margin-top: 1px;
+    background: #E2DCDC;
+    background-blend-mode: soft-light;
+    color: white;
+}
+
+.navbar-text-margin{
+    margin-top: 8px;
+}
+
+.news-text{
+    align-content: center;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: red;
+    opacity: 0.8;
+    display: inline-block;
+   
+}
+
+
+
+
+.nav-item {
+    
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px;
+    border-color: #595959;
+}
+hr{
+    background-color: #595959;
+    height: .7px;
+    box-shadow: initial;
+}
+
+.middle-line{
+
+   
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #00000c;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+.main-flex{
+   
+}
+
+.main{
+    min-height: 100px;
+    
+    
+}
+.flex-container {
+    
+    min-width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.flex-item {
+    background-color: #4d4d4d;
+    margin: 10px;
+    width: 300px;
+    min-height: 150px;
+}
+
+.flex-item:hover {
+        background-color: #404040;
+    }
+
+.flex-item-upper {
+    background-color: #595959;
+    width: 100%;
+    height: 40%;
+    border-radius: 0 0 5px 5px;
+}
+
+.flex-item-upper:hover {
+        background-color: #4d4d4d;
+    }
+
+.flex-item-1 {
+    min-width: 150px;
+}
+
+.flex-item-1-upper {
+  height: 65px;
+}
+
+.flex-item-2 {
+    min-width: 150px;
+}
+
+.flex-item-2-upper {
+    height: 65px;
+}
+
+.flex-item-3 {
+    min-width: 50px;
+    width: 150px;
+}
+
+.flex-item-3-upper {
+}
+
+.flex-gainers{
+    box-sizing: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    float: right;
+    float: inline-end;
+}
+
+.gainers-box {
+    border-radius: 7px;
+    margin-top: 10px;
+    
+    width: 220px;
+    height: 150px;
+    background-color: #4d4d4d;
+}
+.current-airdrop-container{
+    
+    margin-top: 40px;
+}
+
+.main-text {
+    font-family: Verdana;
+    font-weight: 500;
+    color: white;
+    border-left: 6px solid white;
+    padding-left: 15px;
+    
+}
+
+.drop-info {
+    margin-top: 40px;
+    margin-left: 5px;
+    color: white;
+    text-justify: auto;
+    width: 600px;
+    min-width: 200px;
+    justify-content: start;
+    
+}
+.drop-info-end {
+    width: 800px;
+    border-bottom: .7px solid #595959;
+}
+
+.topdrop-text{
+    color: white;
+    text-decoration: none;
+}
+    .topdrop-text:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+.nav-text{
+    color: white !important; 
+}
+ 
+ul:hover{
+    color: red !important;
+}
+
+.topairdroptext{
+    font-family: Verdana;
+    color: white;
+    width: 600px;
+    justify-content: flex-start;
+}
+
+#details{
+    display: none;
+}
+
+#participatebtn{
+    text-decoration: none;
+    background-color: none;
+
+}

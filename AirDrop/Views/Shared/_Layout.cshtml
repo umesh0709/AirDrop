@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title class="text-black-50 ">@ViewData["Title"] - AirDrop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    
+    <header class="d-lg-block">
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  box-shadow mb-3">
+
+            <div class="container">
+
+                <a class="navbar-brand font-weight-normal website-name" asp-area="" asp-controller="Home" asp-action="Index" title="Go to homepage">AirDrop</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class=" navbar-collapse collapse d-sm-inline-flex justify-content-between float-right">
+                    <ul class="navbar-nav flex-grow-1 font-weight-normal  " style="font-size:20px">
+                         <li class="nav-item">
+                            <a class="nav-text nav-link text-dark navbar-text-margin"  asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-text nav-link text-dark navbar-text-margin" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-text nav-link text-dark navbar-text-margin" asp-area="" asp-controller="Cryptos" asp-action="Index">
+                                     CryptoCurrencies
+                                </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class=" footer text-muted ">
+        <div class="container">
+            &copy; 2021 - AirDrop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
