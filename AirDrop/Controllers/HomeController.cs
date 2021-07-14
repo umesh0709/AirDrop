@@ -24,7 +24,7 @@ namespace AirDrop.Controllers
         public IActionResult Index()
         {
             IEnumerable<CryptoInfo> infoList = _db.CryptoInfo;
-            return View(infoList);
+            return View(infoList.Take(5));
         }
 
         public IActionResult Privacy()

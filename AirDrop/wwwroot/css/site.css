@@ -165,61 +165,49 @@ body {
 .main{
     min-height: 100px;
     
-    
 }
+
+
 .flex-container {
-    
-    min-width: 60%;
+    margin-top: 30px;
+    width: 800px;
+    height: 200px;
+    min-width: 200px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
 
-.flex-item {
+.box {
+    border-radius: 7px;
+    margin-right: 20px;
+    height: 70%;
+    width: 40%;
     background-color: #4d4d4d;
-    margin: 10px;
-    width: 300px;
-    min-height: 150px;
 }
 
-.flex-item:hover {
-        background-color: #404040;
-    }
+.box:hover{
+    filter: contrast(90%);
+}
 
-.flex-item-upper {
-    background-color: #595959;
+.upperbox {
+    border-radius: 7px 7px 5px 5px;
     width: 100%;
     height: 40%;
-    border-radius: 0 0 5px 5px;
+    background-color: #595959;
 }
 
-.flex-item-upper:hover {
-        background-color: #4d4d4d;
-    }
-
-.flex-item-1 {
-    min-width: 150px;
+.viewallbox {
+    margin-right: 10px;
+    height: 70%;
+    width: 20%;
+    background-color: #4d4d4d;
+    border-radius: 7px;
+}
+.viewallbox:hover{
+    
 }
 
-.flex-item-1-upper {
-  height: 65px;
-}
-
-.flex-item-2 {
-    min-width: 150px;
-}
-
-.flex-item-2-upper {
-    height: 65px;
-}
-
-.flex-item-3 {
-    min-width: 50px;
-    width: 150px;
-}
-
-.flex-item-3-upper {
-}
 
 .flex-gainers{
     box-sizing: inherit;
@@ -265,6 +253,7 @@ body {
 .drop-info-end {
     width: 800px;
     border-bottom: .7px solid #595959;
+    margin: 10px 0 10px 0; 
 }
 
 .topdrop-text{
@@ -299,4 +288,41 @@ ul:hover{
     text-decoration: none;
     background-color: none;
 
+}
+
+.emailtext{
+    font-family: Verdana;
+    color: white;
+    
+}
+.emailadd{
+    border: 3px groove darkblue;
+    padding: 8px;
+    margin: 5px;
+    width: 300px;
+    height: 33px;
+    background-color: transparent;
+}
+
+.emailsubmit{
+    font-family: 'Times New Roman';
+    word-spacing: 4px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    padding: 5px;
+    width: 100px;
+    height: 37px;
+    color: wheat;
+    border: 1px solid black;
+    margin: 5px;
+    background-color: darkblue;
+}
+.emailsubmit:hover{
+    filter: contrast(90%);
+    
+}
+
+.topdropimg{
+    height: 90%;
+    width: 30%;
 }
