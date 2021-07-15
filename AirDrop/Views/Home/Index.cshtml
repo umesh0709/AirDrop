@@ -16,17 +16,31 @@
         </div>
 
         <div class="flex-container">
-            <a class="topdrop-text box" asp-area="" asp-controller="TopAirdrops" asp-action="Brave">
-                <div class="upperbox" >
-                   <img class="topdropimg" src="~/media/brave.png" />
+            <a class=" box nodecoration" asp-area="" asp-controller="TopAirdrops" asp-action="Brave">
+                <div class="upperbox ">
+                    <div class="ssx">
+                        <img class="topdropimg" src="~/media/brave.png" />
+                        <h5 class="topdroptext">Earn BAT</h5>
+                    </div>
+                </div>
+                <div class="topdropinfo">
+                    <p>Earn Basic Attention Token for simply browsing with Brave web browser</p>
                 </div>
             </a>
-            <a class="box">
-                <div class="upperbox"></div>
+            <a class=" box nodecoration" asp-area="" asp-controller="TopAirdrops" asp-action="Brave">
+                <div class="upperbox ">
+                    <div class="ssx">
+                        <img class="topdropimg" src="~/media/brave.png" />
+                        <h5 class="topdroptext">Earn BAT</h5>
+                    </div>
+                </div>
+                <div class="topdropinfo">
+                    <p>Earn Basic Attention Token for simply browsing with Brave web browser</p>
+                </div>
             </a>
 
-            <div class="viewallbox">
-               
+            <div class="viewallbox text-center">
+                <a class="nodecoration text-white" asp-area="" asp-controller="TopAirdrops" asp-action="Index" title="show all top airdrops">View all</a>
             </div>
         </div>
 
@@ -36,26 +50,37 @@
         <div class="current-airdrop-container">
             <h3 class="main-text">Current top airdrops</h3>
         </div>
-        <div class="drop-info" >
-         
+        <div class="drop-info">
+
             @foreach (var mod in Model)
             {
-            <div class="container">
-                
-                <h4>@mod.Name</h4>
-                <p>
-                    @mod.Info
-                </p>
-                <h6 id="participatebtn">Join airdrop</h6>
-                <a href="@mod.ParticipateLink">@mod.ParticipateLink</a>
-                <div class="drop-info-end"></div>
-            </div>
-               
+                <div class="container">
+
+                    <h4>@mod.Name</h4>
+                    <p>
+                        @mod.Info
+                    </p>
+                    
+                        <a asp-area="" asp-controller="TopAirdrops" asp-action="Index">button
+                        </a>
+                    
+                   
+                    <h6 id="participatebtn">Join airdrop</h6>
+                    <a href="@mod.ParticipateLink">@mod.ParticipateLink</a>
+                    <div class="drop-info-end"></div>
+
+                </div>
             }
-            
+            <a class="nodecoration" asp-area="" asp-controller="CurrentAirdops" asp-action="Index" title="show current airdops">
+                <div class="text-center ">
+                    <span  class="bordered-text text-white ">More</span>
+
+                </div>
+                
+            </a>
 
         </div>
-
+      
 
     </div>
     <div>
