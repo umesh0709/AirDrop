@@ -19,5 +19,9 @@ namespace AirDrop.Data
         public DbSet<Item> Items { get; set; }
 
         public DbSet<CryptoInfo> CryptoInfo { get; set; }
+
+        public DbSet<Tweets> Tweets { get; set; }
+
+
     }
 }

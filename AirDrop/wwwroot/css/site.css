@@ -162,9 +162,16 @@ body {
    
 }
 
-.main{
-    min-height: 100px;
-    
+.currentairdrop {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #000d1a;
+    filter: contrast(90%);
+    border-radius: .4em;
+    width: 800px;
+}
+.currentairdrop:hover{
+    filter: contrast(100%);
 }
 
 
@@ -176,6 +183,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    
 }
 
 .box {
@@ -244,6 +252,7 @@ body {
 }
 
 .drop-info {
+    
     margin-top: 40px;
     margin-left: 5px;
     color: white;
@@ -277,9 +286,6 @@ ul:hover{
     justify-content: flex-start;
 }
 
-#details{
-    display: none;
-}
 
 #participatebtn{
     text-decoration: none;
@@ -321,12 +327,11 @@ ul:hover{
 
 .bordered-text {
     background-color: none;
-   
     padding: .3em .6em .3em .6em;
-    border: 3px solid darkblue;
+    border: 3px solid #000d1a;
 }
     .bordered-text:hover {
-        background-color: darkblue;
+        background-color: #000d1a;
     }
 
 .topdropimg{
@@ -354,6 +359,7 @@ ul:hover{
     padding: 10px 16px;
     font-family: Arial, Helvetica, sans-serif;
     text-justify: auto;
+    font-size-adjust: inherit;
 }
 
 .nodecoration{
@@ -363,3 +369,39 @@ ul:hover{
 .nodecoration:hover{
     text-decoration: none;
 }
+
+.tweetssection{
+    width: 800px;
+    margin: 25px;
+    height: 640px;
+}
+.tweets-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.tweetbox{
+    height: 22em;
+    width: 19em;
+    margin: 2.4em;
+    
+}
+
+#tweet1 {
+    display: block;
+}
+#tweet2 {
+    display: block;
+}
+#tweet3 {
+    display: none;
+}
+#tweet4 {
+    display: none;
+}
+#tweet5 {
+    display: none;
+}
+
+
