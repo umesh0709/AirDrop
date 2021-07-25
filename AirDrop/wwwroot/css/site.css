@@ -16,28 +16,16 @@ a.navbar-brand {
 }
 
 
-
-.header-two{
-    width: 100%;
-   
-    padding: 80px 0px;
-    background-color: #1861ac;
-}
-
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
 }
 
-.website-name{
-    position: center;
-    font-size: 1.5rem;
-    
-}
 
 nav {
     /*border-bottom: 2px solid #595959;*/
-    background-color: #00010c;
+    /*background-color: #00010c;*/
+    background-color: gray;
     border-bottom: .7px solid #595959;
     
 }
@@ -53,29 +41,9 @@ footer {
 }
 /* Rectangle 1 */
 
-.news-bar {
-    position: absolute;
-    width: fit-content();
-    height: 30px;
-    margin-left: 2px;
-    margin-top: 1px;
-    background: #E2DCDC;
-    background-blend-mode: soft-light;
-    color: white;
-}
 
 .navbar-text-margin{
     margin-top: 8px;
-}
-
-.news-text{
-    align-content: center;
-    margin-left: 4px;
-    margin-right: 4px;
-    color: red;
-    opacity: 0.8;
-    display: inline-block;
-   
 }
 
 
@@ -123,10 +91,6 @@ hr{
     box-shadow: initial;
 }
 
-.middle-line{
-
-   
-}
 
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
@@ -147,7 +111,9 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background-color: #00000c;
+    /*   background-color: #00000c;*/
+    background-color: #f2f2f2;
+    color: black;
 }
 .footer {
   position: absolute;
@@ -158,250 +124,405 @@ body {
 }
 
 
-.main-flex{
-   
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
 }
 
-.currentairdrop {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: #000d1a;
-    filter: contrast(90%);
-    border-radius: .4em;
-    width: 800px;
+nav {
+    background-color: black;
+    padding: 1%;
+    padding-bottom: 0.5%;
 }
-.currentairdrop:hover{
-    filter: contrast(100%);
+
+li {
+    list-style: none;
+    margin: 0 3% 0 3%;
 }
 
 
-.flex-container {
-    margin-top: 30px;
-    width: 800px;
-    height: 200px;
-    min-width: 200px;
+.nav-links {
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+}
+
+
+.top-crypto {
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.crypto-logo{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    
 }
 
-.box {
-    color: white;
-    border-radius: 7px;
-    margin-right: 20px;
-    height: 70%;
-    width: 40%;
-    background-color: #4d4d4d;
+.crypto-details {
+    margin: 2%;
 }
 
-.box:hover{
-    filter: contrast(90%);
-    color: white;
+.crypto-details:hover{
+    background-color: #e6e6e6;
 }
 
-.upperbox {
-    border-radius: 7px 7px 5px 5px;
-    width: 100%;
-    height: 43%;
-    background-color: #595959;
+.crypto-details > p{
+    text-align: center;
 }
 
-.viewallbox {
-    margin-right: 10px;
-    height: 70%;
-    width: 20%;
-    background-color: #4d4d4d;
-    border-radius: 7px;
-    padding: 3.17em;
-}
-.viewallbox:hover{
-    
+.website-name {
+    text-align: center;
 }
 
+.website {
+    display: flex;
+}
 
-.flex-gainers{
-    box-sizing: inherit;
+p {
+    font-weight: 500;
+}
+
+.main-container {
+   border-right: 1px solid rgb(0 0 0 / 0.64);
+    width: 72%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gainers-container {
+    width: 28%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    float: right;
-    float: inline-end;
+    align-items: center;
+    padding: 1.8%;
 }
 
-.gainers-box {
-    border-radius: 7px;
-    margin-top: 10px;
-    
-    width: 220px;
-    height: 150px;
-    background-color: #4d4d4d;
-}
-.current-airdrop-container{
-    
-    margin-top: 40px;
+.topdrop-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.main-text {
-    font-family: Verdana;
-    font-weight: 500;
-    color: white;
-    border-left: 6px solid white;
+.topdrop-info {
+    background: #e6e6e6;
+    margin: 2%;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.4) 2px 2px  ;
+}
+.topdrop-info:hover{
+    filter: contrast(90%);
+}
+
+
+.currentdrop-info {
+   
+    margin: 2%;
+    padding-right: 20%;
+    border-radius: 10px;
+}
+
+.currentdrop-info:hover {
+    background: #e6e6e6;
+}
+
+    .currentdrop-info > p {
+        padding: 2%;
+    }
+
+.topdrop-info > p {
+    padding: 2%;
+}
+
+.heading {
+    width: 100%;
+    height: 2rem;
+    background: #d9d9d9;
+    display: table;
+    border-radius: 5px;
+}
+
+.current-head {
+    width: 100%;
+    height: 2rem;
+    display: table;
+    border-radius: 5px;
+}
+
+    .current-head > h3 {
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 4%;
+    }
+
+.heading > h3 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.view-all {
+    background: #e6e6e6;
+    margin: 2%;
+    padding: 2%;
+    display: table;
+    width: 40%;
+    height: 40%;
+    border-radius: 10px;
+}
+
+.view-all:hover{
+    filter: contrast(90%);
+}
+
+    .view-all > h4 {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 18px;
+    }
+
+.content-container {
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 0;
+}
+
+.content-container > h3{
+    color: black;
+    font-weight: bold;
+    margin: 2%;
+    border-left : 4px solid gray;
     padding-left: 15px;
+}
+
+
+.trending-coins {
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    padding: 4%;
+}
+
+.side-box {
+    /* width: 60%;
+    margin: 20px;
+    padding: 2%;*/
+    max-width: 550px;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.news-container {
+   
+    margin: 2%;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.news-container > h3 {
+     color: black;
+    font-weight: bold;
+    border-left: 4px solid gray;
+    padding-left: 15px;
+    display: flex;
+  
+}
+
+.news-wrapper {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news {
+    /*display: flex;
+    flex-direction: row;
+    width: 100%;*/
+    padding-left: 0px;
+    box-sizing: border-box;
+    height: 250px;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+   
+    -webkit-overflow-scrolling: touch;
+
+}
+
+.news-box {
+    padding: 2%;
+    min-width: 25%;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    margin: 1rem;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.news-box:hover{
+    filter: contrast(95%);
+}
+
+.paddles{
+
+}
+
+.paddle {
     
 }
 
-.drop-info {
-    
-    margin-top: 40px;
-    margin-left: 5px;
-    color: white;
-    text-justify: auto;
-    width: 600px;
-    min-width: 200px;
-    justify-content: start;
-    font-family: Arial, Helvetica, sans-serif;
-    
-}
-.drop-info-end {
-    width: 800px;
-    border-bottom: .7px solid #595959;
-    margin: 10px 0 10px 0; 
+button{
+   border: none;
+   font-size: 30px;
+   font-weight: bold;
+   margin: 15px;
+   text-decoration: none;
+   padding: .3%;
 }
 
-
-
-.nav-text{
-    color: white !important; 
-}
- 
-ul:hover{
-    color: red !important;
+.left-paddle{
 }
 
-.topairdroptext{
-    font-family: Verdana;
-    color: white;
-    width: 600px;
-    justify-content: flex-start;
+.right-paddle{
 }
 
-
-#participatebtn{
-    text-decoration: none;
-    background-color: none;
-
+.hidden{
 }
 
-.emailtext{
-    font-family: Verdana;
-    color: white;
-    
-}
-.emailadd{
-    border: 3px groove darkblue;
-    padding: 8px;
-    margin: 5px;
-    width: 300px;
-    height: 33px;
-    background-color: transparent;
+.email-container {
+    text-align: center;
+    width: 100%;
+    padding: 2%;
 }
 
-.emailsubmit{
-    font-family: 'Times New Roman';
-    word-spacing: 4px;
-    font-size: 1.2rem;
-    border-radius: 8px;
-    padding: 5px;
-    width: 100px;
-    height: 37px;
-    color: wheat;
-    background-color: darkblue;
-    border: 1px solid black;
-    margin: 5px;
+.emailtext, .emailadd, .emailsubmit {
+    margin: 3px;
+}
+
+.emailadd  {
+    width: 25%;
+    padding: .4%;
+    border: 1.7px solid black;
+}
+.emailsubmit {
+    padding: .4%;
+    border: 1.7px solid black;
+}
+
+.email-container > h4{
+    font-size: 30px;
 }
 .emailsubmit:hover{
     filter: contrast(90%);
-    
 }
 
-.bordered-text {
-    background-color: none;
-    padding: .3em .6em .3em .6em;
-    border: 3px solid #000d1a;
-}
-    .bordered-text:hover {
-        background-color: #000d1a;
+
+@media screen and (max-width: 600px) {
+
+    .top-crypto {
+        padding: 0;
+        width: 100%;
     }
 
-.topdropimg{
-    height: 83%;
-    width: 30%;
-    float: left;
+    .top-crypto > .crypto-details {
+        margin: 0%;
+    }
+
+    #det{
+        margin: 20px;
+    }
+
+    .website {
+        flex-wrap: wrap;
+    }
+
+    .gainers-container {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .currentdrop-info {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-right: 0;
+        float: left;
+    }
+
+    .main-container {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgb(0 0 0 / 0.64);
+    }
+
+    .topdrop-container {
+        flex-direction: column;
+    }
+
+    .view-all {
+        align-self: center;
+        height: 0.7rem;
+        width: 6rem;
+        
+    }
+    .view-all > h3 {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .news {
+        flex-direction:column;
+        overflow: scroll;
+        margin-right: -10px;
+        margin-bottom: -10px;
+        scrollbar-base-color: none;
+    }
+
+    .news-box{
+        margin: 5px;
+    }
+
+    .paddle{
+        display: none;
+    }
+
+    .emailadd {
+        width: 60%;
+        padding: .2%;
+        border: 1.7px solid black;
+    }
+
+    .emailsubmit {
+        padding: .5%;
+        border: 1.7px solid black;
+    }
+
+    .email-container > h4{
+        font-size : 30px;
+    }
 }
 
-.topdroptext{
-     padding: 10px;
-     padding-left: 3em;
-     font-size: 2.1rem;
-     font-family: Arial, Helvetica, sans-serif;
-     font-weight: 700;
-     word-spacing: 2px;
-     letter-spacing: 0.6px;
-    
+
+footer {
+    width: 100%;
 }
 
-.ssx{
-   padding-left: 0em;
-}
 
-.topdropinfo{
-    padding: 10px 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-justify: auto;
-    font-size-adjust: inherit;
-}
 
-.nodecoration{
-    text-decoration: none;
-}
 
-.nodecoration:hover{
-    text-decoration: none;
-}
 
-.tweetssection{
-    width: 800px;
-    margin: 25px;
-    height: 640px;
-}
-.tweets-container{
-    display: flex;
-    flex-direction: row;
-    
-}
 
-.tweetbox{
-    height: 22em;
-    width: 19em;
-    margin: 2.4em;
-    
-}
-
-#tweet1 {
-    display: block;
-}
-#tweet2 {
-    display: block;
-}
-#tweet3 {
-    display: none;
-}
-#tweet4 {
-    display: none;
-}
-#tweet5 {
-    display: none;
-}
 
 

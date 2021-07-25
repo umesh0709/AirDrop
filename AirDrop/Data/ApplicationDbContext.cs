@@ -18,10 +18,13 @@ namespace AirDrop.Data
 
         public DbSet<Item> Items { get; set; }
 
-        public DbSet<CryptoInfo> CryptoInfo { get; set; }
+        public DbSet<CurrentAirdropsData> CryptoInfo { get; set; }
 
         public DbSet<Tweets> Tweets { get; set; }
 
+     //   public DbSet<TrendingCoinsOnCoinGecko> TrendingCoins {get; set;}
+
+        public DbSet<Item> Item { get; set; }
 
     }
 }

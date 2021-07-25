@@ -7,7 +7,7 @@ namespace AirDrop.Models
 {
     public class MultipleTables
     {
-        public IEnumerable<CryptoInfo> CryptoInfo { get; set; }
+        public IEnumerable<CurrentAirdropsData> CryptoInfo { get; set; }
         public List<Tweets> Tweets { get; set; }
     }
 }
