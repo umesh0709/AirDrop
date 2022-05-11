@@ -1,0 +1,59 @@
+﻿@model AirDropML.Model.ModelInput
+
+
+<h2>Welcome to Price Prediction for the cryptocurrency </h2>
+
+<hr />
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Index">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Date" class="control-label">Date</label>
+                    <input asp-for="Date" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Open" class="control-label">Open</label>
+                    <input asp-for="Open" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="High" class="control-label">High</label>
+                    <input asp-for="High" class="form-control" />
+                </div><div class="form-group col-md-4">
+                    <label asp-for="Low" class="control-label">Low</label>
+                    <input asp-for="Low" class="form-control" />
+                </div>
+
+
+            </div>
+            <div class="form-group col-md-4 text-left">
+                <label class="control-label"></label>
+                <input type="submit" value="Crypto Prediction" class="btn btn-primary" />
+            </div>
+        </form>
+        <hr />
+    </div>
+
+</div>
+
+
+@if (ViewBag.Result != null)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="color:#103f62">Here is the Test result for Item : <span style="color:#a50f0f"> @ViewData["Date"]   </h2>
+            <h1 style="color:#a50f0f">Final Predicted Value is :@ViewBag.Result.Score  </h1>
+        </div>
+    </div>
+    <hr />
+
+}
+
+<div>
+  
+</div>
+
+
+

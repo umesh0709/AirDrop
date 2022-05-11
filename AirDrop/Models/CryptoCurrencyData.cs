@@ -8,52 +8,6 @@ using System.ComponentModel.DataAnnotations;
 namespace AirDrop.Models
 {
    
- 
-
-    public class _7d
-    {
-        public string volume { get; set; }
-        public string price_change { get; set; }
-        public string price_change_pct { get; set; }
-        public string volume_change { get; set; }
-        public string volume_change_pct { get; set; }
-        public string market_cap_change { get; set; }
-        public string market_cap_change_pct { get; set; }
-    }
-
-    public class _30d
-    {
-        public string volume { get; set; }
-        public string price_change { get; set; }
-        public string price_change_pct { get; set; }
-        public string volume_change { get; set; }
-        public string volume_change_pct { get; set; }
-        public string market_cap_change { get; set; }
-        public string market_cap_change_pct { get; set; }
-    }
-
-    public class _365d
-    {
-        public string volume { get; set; }
-        public string price_change { get; set; }
-        public string price_change_pct { get; set; }
-        public string volume_change { get; set; }
-        public string volume_change_pct { get; set; }
-        public string market_cap_change { get; set; }
-        public string market_cap_change_pct { get; set; }
-    }
-
-    public class Ytd
-    {
-        public string volume { get; set; }
-        public string price_change { get; set; }
-        public string price_change_pct { get; set; }
-        public string volume_change { get; set; }
-        public string volume_change_pct { get; set; }
-        public string market_cap_change { get; set; }
-        public string market_cap_change_pct { get; set; }
-    }
-
     public class CryptoCurrencyData
     {
         public string id { get; set; }
@@ -90,12 +44,7 @@ namespace AirDrop.Models
         public string high { get; set; }
         public DateTime high_timestamp { get; set; }
         public _1d _1d { get; set; }
-        public _7d _7d { get; set; }
-        public _30d _30d { get; set; }
-        public _365d _365d { get; set; }
-        public Ytd ytd { get; set; }
-
-
+        
      
     }
     public class _1d

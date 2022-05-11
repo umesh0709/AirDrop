@@ -3,33 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
 namespace AirDrop.Models
 {
-
-    public class Bitcoin
-    {
-        public int usd;
-    }
-
-   
-
+ 
 
     public class Root
     {
-        public List<Coin> coins { get; set; }
-        public List<object> exchanges { get; set; }
+        [JsonProperty("coins")]
+        public Coin coins { get; set; }
+
+     //   public List<object> exchanges { get; set; }
     }
 
     public class Coin
     {
+        [JsonProperty("items")]
         public Item item { get; set; }
     }
     public class Item
     {
         public string id { get; set; }
         public int coin_id { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; }
         public string symbol { get; set; }

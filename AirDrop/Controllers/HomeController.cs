@@ -16,8 +16,15 @@ using System.Drawing;
 using System.Net.Http;
 using System.Collections;
 using Newtonsoft.Json;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Net;
+using NoobsMuc.Coinmarketcap.Client;
+using Newtonsoft.Json.Linq;
+using NewsAPI;
+using NewsAPI.Models;
+using NewsAPI.Constants;
+
 
 namespace AirDrop.Controllers
 {
@@ -35,9 +42,14 @@ namespace AirDrop.Controllers
 
         public void main()
         {
-           // Console.WriteLine(TrendingCoins());
-          //  Console.Read();
+            // Console.WriteLine(TrendingCoins());
+            //  Console.Read();
+
+            ICoinmarketcapClient client = new CoinmarketcapClient("5a588ead - c082 - 4c4b - a9e2 - 390e69e55165");
+           
         }
+
+
         public IActionResult Index()
         {
 
@@ -50,9 +62,13 @@ namespace AirDrop.Controllers
             ViewBag.cryptoCurrencyData = GetCurrencyData();
             ViewBag.currentAirdropsData = GetCurrentAirdropsData();
             ViewBag.tweets = Tweets();
+         //   ViewBag.trending = CoinGeckoTrending();
             return View();
         }
 
+       
+
+       
         [HttpGet]
         public List<CurrentAirdropsData> GetCurrentAirdropsData()
         {
@@ -87,17 +103,16 @@ namespace AirDrop.Controllers
             
             using (var client = new HttpClient()) {
                 client.BaseAddress = new Uri("https://api.nomics.com/v1/");
-                var responseTask = client.GetAsync("currencies/ticker?key=60554f1aac4ec6ecf9d934a78719834f353163ae&ids=BTC,ETH,BNB");
+                var responseTask = client.GetAsync("currencies/ticker?key=60554f1aac4ec6ecf9d934a78719834f353163ae&&interval=1d&per-page=6&page=1 "
+                   );
                 responseTask.Wait();
 
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode) {
                     Task<string> json = result.Content.ReadAsStringAsync();
-                    List<CryptoCurrencyData> currencyData = JsonConvert.DeserializeObject<List<CryptoCurrencyData>>(json.Result);
+                    dynamic currencyData = JsonConvert.DeserializeObject<List<CryptoCurrencyData>>(json.Result);
                     return currencyData;
                 }
-
-
             }
                 return null;
         }
@@ -106,7 +121,7 @@ namespace AirDrop.Controllers
         {
             List<_1d> dailyChange = new List<_1d>();
 
-            using (var client = new HttpClient()) {
+            using (HttpClient client = new HttpClient()) {
                 client.BaseAddress = new Uri("https://api.nomics.com/v1/");
                 var responseTask = client.GetAsync("currencies/ticker?key=60554f1aac4ec6ecf9d934a78719834f353163ae&ids=BTC");
                 responseTask.Wait();
@@ -128,26 +143,34 @@ namespace AirDrop.Controllers
 
         public  IActionResult TrendingCoins()
         {
-            var client = new WebClient();
-            string json = client.DownloadString(@"https://api.coingecko.com/api/v3/search/trending");
-            Item items = JsonConvert.DeserializeObject<Item>(json);
-            return View(items);
-          /*  var model = ConvertJsonToString();
-            return View(model);*/
+
+              var client = new WebClient();
+              string json = client.DownloadString(@"https://api.coingecko.com/api/v3/search/trending");
+              Item items = JsonConvert.DeserializeObject<Item>(json);
+              return View(items);
+
+
+            /*   string query = "";
+               Uri queryUri = new Uri(query);
+
+               using (WebClient client = new WebClient) {
+                   dynamic json = JsonSerializer.Deserialize<Item<string, dynamic>>(client.DownloadString(queryUri));
+               }*/
         }
 
-        [HttpGet]
-       /* private Coins ConvertJsonToString()
+      /*  [HttpGet]
+        private JArray CoinGeckoTrending()
         {
-          // IEnumerable<TrendingCoinsOnCoinGecko> trendingCoins = null;
+            // IEnumerable<TrendingCoinsOnCoinGecko> trendingCoins = null;
             using (var client = new HttpClient()) {
-                 client.BaseAddress = new Uri("https://api.coingecko.com/api/v3/");
+                client.BaseAddress = new Uri("https://api.coingecko.com/api/v3/");
                 var responseTask = client.GetAsync("search/trending");
 
                 responseTask.Wait();
 
                 //TO DO
 
+                
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode) {
 
@@ -157,18 +180,28 @@ namespace AirDrop.Controllers
                         NullValueHandling = NullValueHandling.Ignore,
                         MissingMemberHandling = MissingMemberHandling.Ignore
                     };
-                    var stringResult = JsonConvert.DeserializeObject<Coins>(readJob.Result, jsonSettings);
-                    
-                    Console.WriteLine(stringResult);
-                    return stringResult;
+
+                  
+                     Root stringResult = JsonConvert.DeserializeObject<Root>(readJob.Result);
+
+                    //  Console.WriteLine(stringResult);
+
+                    JArray jArray = JArray.Parse(readJob.Result);
+
+                    foreach(JObject j in jArray) {
+                        
+                    }
+                    // return stringResult;
+
+                    return jArray;
                 }
-               return null;
+                return null;
 
             }
         }*/
 
-    
-        
+
+
         [HttpGet]
         public List<Tweets> Tweets()
         {
@@ -190,8 +223,15 @@ namespace AirDrop.Controllers
             return tweets;
         }
 
+        public IActionResult CryptoInfo()
+        {
+            return View();
+        }
 
-
+        public IActionResult Views()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

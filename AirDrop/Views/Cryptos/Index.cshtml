@@ -1,9 +1,34 @@
-﻿
+﻿@using AirDrop.Models;
 
 <section>
-    <div class="border p-3">
-        <div style="color:aqua">
-            <p>FFFF</p>
-        </div>
+    <div class="">
+        <table id="coin">
+            <tr style="background-color: #bfbfbf">
+                <th>Rank</th>
+                <th>Logo</th>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Market Cap</th>
+                <th>Dominance</th>
+
+            </tr>
+            @foreach (CryptoCurrencyData d in ViewBag.cryptoList)
+            {
+
+                <tr style="font-weight:lighter">
+                    <th>@d.rank</th>
+                    <th>
+                        <img class="text-left" height="27" style="padding: 0 0 5px 5px;" src="@d.logo_url" />
+                    </th>
+                    <th>@d.name</th>
+                    <th style="margin:0 8px 0 8px">@d.symbol</th>
+                    <th>@d.Price</th>
+                    <th>$@d.market_cap</th>
+                    <th>@d.market_cap_dominance</th>
+                  
+                </tr>
+            }
+        </table>
     </div>
 </section>

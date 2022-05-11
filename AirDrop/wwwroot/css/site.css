@@ -25,7 +25,7 @@ a {
 nav {
     /*border-bottom: 2px solid #595959;*/
     /*background-color: #00010c;*/
-    background-color: gray;
+    background-color: white;
     border-bottom: .7px solid #595959;
     
 }
@@ -132,7 +132,7 @@ body {
 }
 
 nav {
-    background-color: black;
+    background-color: white;
     padding: 1%;
     padding-bottom: 0.5%;
 }
@@ -150,23 +150,13 @@ li {
 }
 
 
-.top-crypto {
-
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.top-currency {
+    width: 80%;
+   background-color: none !important;
 }
 
 
-.crypto-logo{
-    display: flex;
-    flex-direction: row;
-}
 
-.crypto-details {
-    margin: 2%;
-}
 
 .crypto-details:hover{
     background-color: #e6e6e6;
@@ -189,8 +179,9 @@ p {
 }
 
 .main-container {
-   border-right: 1px solid rgb(0 0 0 / 0.64);
-    width: 72%;
+/*   border-right: 1px solid rgb(0 0 0 / 0.64);
+    width: 72%;*/
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -201,6 +192,62 @@ p {
     flex-direction: column;
     align-items: center;
     padding: 1.8%;
+    
+}
+
+.cards-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gainers-card {
+   
+    padding: 20px;
+    width: 60%;
+   /* min-width:100px;*/
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(0,0,0,0.4);
+    margin: 20px;
+    text-align: center;
+}
+
+.top-coin{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#coin {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.video-view{
+    margin: 10px 0 10px 0;
+    text-align: center;
+}
+
+#coin td, #coin th {
+    border: 0px solid #ddd;
+    padding: 8px;
+}
+
+#coin tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#coin tr:hover {
+    background-color: #ddd;
+}
+
+#coin th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    /*background-color: red;*/
+   
 }
 
 .topdrop-container {
@@ -212,14 +259,19 @@ p {
 
 .topdrop-info {
     background: #e6e6e6;
-    margin: 2%;
+    margin: 3%;
+
     border-radius: 10px;
-    box-shadow: rgba(0,0,0,0.4) 2px 2px  ;
+    box-shadow: rgba(0,0,0,0.4) 2px 2px;
 }
 .topdrop-info:hover{
     filter: contrast(90%);
 }
 
+.bat-drop{
+    padding: 5%;
+    background-color: white;
+}
 
 .currentdrop-info {
    
@@ -234,6 +286,7 @@ p {
 
     .currentdrop-info > p {
         padding: 2%;
+        padding-bottom: 0;
     }
 
 .topdrop-info > p {
@@ -258,7 +311,7 @@ p {
     .current-head > h3 {
         display: table-cell;
         vertical-align: middle;
-        padding-left: 4%;
+        padding-left: 3%;
     }
 
 .heading > h3 {
@@ -272,8 +325,8 @@ p {
     margin: 2%;
     padding: 2%;
     display: table;
-    width: 40%;
-    height: 40%;
+    width: 10%;
+    height: 25%;
     border-radius: 10px;
 }
 
@@ -285,7 +338,7 @@ p {
         display: table-cell;
         vertical-align: middle;
         text-align: center;
-        font-size: 18px;
+        font-size: 14px;
     }
 
 .content-container {
@@ -427,21 +480,31 @@ button{
     filter: contrast(90%);
 }
 
+.crypto-info {
+    padding: 1%;
+    
+    opacity: 0.8;
+}
+    .crypto-info > h1 {
+        margin-bottom: 4%;
+        padding: 1%;
+       text-align: center;
+        border-top: solid 1px black;
+        border-bottom: solid 1px black;
+    }
+    .crypto-info > p {
+        text-align: justify;
+        color: #262626;
+        word-spacing: 3px;
+        font-size: 1.3rem;
+        
+    }
+
+    .crypto-info > h3{
+        font-weight:100;
+    }
 
 @media screen and (max-width: 600px) {
-
-    .top-crypto {
-        padding: 0;
-        width: 100%;
-    }
-
-    .top-crypto > .crypto-details {
-        margin: 0%;
-    }
-
-    #det{
-        margin: 20px;
-    }
 
     .website {
         flex-wrap: wrap;
@@ -450,6 +513,10 @@ button{
     .gainers-container {
         width: 100%;
         flex-wrap: wrap;
+    }
+
+    .cards-container{
+        flex-direction: column;
     }
 
     .currentdrop-info {
@@ -518,6 +585,8 @@ button{
 footer {
     width: 100%;
 }
+
+
 
 
 

@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\what-is-crypto.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="web.config.comments" />
     <None Remove="web.config.default" />
   </ItemGroup>
@@ -32,8 +36,16 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.ML" Version="1.7.1" />
+    <PackageReference Include="Microsoft.ML.FastTree" Version="1.7.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="NewsAPI" Version="0.6.0" />
+    <PackageReference Include="NoobsMuc.Coinmarketcap.Client" Version="2.2.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AirDropML.Model\AirDropML.Model.csproj" />
   </ItemGroup>
 
 </Project>
