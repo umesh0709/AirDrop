@@ -14,6 +14,13 @@
     }
 }*/
 
+function ValidateForm() {
+    var x = document.getElementById("inputid").nodeValue;
+    if (Number.isInteger(x)) {
+        alert("Input must be integer");
+        return false;
+    }
+}
 
 var current = 0;
 

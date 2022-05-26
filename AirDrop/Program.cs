@@ -23,6 +23,7 @@ namespace AirDrop
         static void AllPredictedValues()
         {
             Dictionary<string, List<float>> dict = new Dictionary<string, List<float>>();
+            Dictionary<string, float> ActualValues = new Dictionary<string, float>();
 
             using (var reader = new StreamReader(@"C:\Users\umesh\source\repos\PricePredication\PricePredication\Data\BitcoinTestData.csv")) {
                 var line = reader.ReadLine();
@@ -40,6 +41,11 @@ namespace AirDrop
                         }
                     }
 
+                    bool b = float.TryParse(values[1], out float l);
+
+                    if(b) {
+                        ActualValues.Add(values[0], l);
+                    }
                     dict.Add(values[0], list);
 
                 }
@@ -70,10 +76,22 @@ namespace AirDrop
                 res.Add(tmp);
             }
 
+            PredictedDict(predictedValues);
+            ActualDict(ActualValues);
             /*foreach (var k in dict.Keys)
             {
                 Console.WriteLine("Original {0} : Predicted {1}", dict[k][0], predictedValues[k]);
             }*/
+        }
+
+        public static Dictionary<string, float> PredictedDict(Dictionary<string, float> dict)
+        {
+            return dict;
+        }
+
+        public static Dictionary<string, float> ActualDict(Dictionary<string, float> dict)
+        {
+            return dict;
         }
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
