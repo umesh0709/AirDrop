@@ -11,11 +11,10 @@
                 <th>Price</th>
                 <th>Market Cap</th>
                 <th>Dominance</th>
-
             </tr>
+
             @foreach (CryptoCurrencyData d in ViewBag.cryptoList)
             {
-
                 <tr style="font-weight:lighter">
                     <th>@d.rank</th>
                     <th>
@@ -26,9 +25,24 @@
                     <th>@d.Price</th>
                     <th>$@d.market_cap</th>
                     <th>@d.market_cap_dominance</th>
-                  
+
                 </tr>
             }
         </table>
     </div>
+   @* <div>
+        <table id="coin">
+            @foreach (CryptoCurrencyData d in ViewBag.cryptoList)
+            {
+                <tr>
+                    <th>@d.rank</th>
+                    <th>
+                        <img class="text-left" height="27" style="padding: 0 0 5px 5px;" src="@d.logo_url" />
+                    </th>
+                    <th style="margin:0 8px 0 8px">@d.symbol</th>
+                    <th>$@d.Price</th>
+                </tr>
+            }
+        </table>
+    </div>*@
 </section>

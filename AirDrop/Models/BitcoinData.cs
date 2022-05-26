@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 namespace AirDrop.Models
 {
    
-    public class CryptoCurrencyData
+    public class BitcoinData
     {
         public string id { get; set; }
         public string currency { get; set; }
@@ -42,27 +42,12 @@ namespace AirDrop.Models
         public string rank { get; set; }
         public string rank_delta { get; set; }
         public string high { get; set; }
-        public string High {
-            get {
-                double result = Double.Parse(high);
-                return Math.Round(result, 2).ToString(); /*result.ToString("0.00");*/
-            }
-            set { }
-        }
         public DateTime high_timestamp { get; set; }
-        public _1d _1d { get; set; }
         
-      
+        
      
     }
-    public class _1d
-    {
-        public string volume { get; set; }
-        public string price_change { get; set; }
-        public string price_change_pct { get; set; }
-        public string volume_change { get; set; }
-        public string volume_change_pct { get; set; }
-        public string market_cap_change { get; set; }
-        public string market_cap_change_pct { get; set; }
-    }
+   
+
+   
 }

@@ -1,0 +1,183 @@
+﻿@using AirDrop.Models; 
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<html>
+<body>
+    <style>
+        p{
+            text-justify: auto;
+        }
+        .currency {
+            margin: 5%;
+            padding: 4px;
+
+        }
+
+        .currency-info{
+            margin:5% 5% 10px 0;
+            font-size: 22px;
+            
+        }
+
+            .currency-info > p {
+                text-align: justify;
+            }
+
+            .currency-info > h2 {
+                border-left: 8px solid black;
+                padding-left: 10px;
+                background-image: linear-gradient(to right, gray, #f2f2f2);
+                margin-right: 30%;
+            }
+
+        .rank{
+            background-color: gray;
+            color: white;
+            padding: 1px 3px 1px 3px;
+            border-radius: 4px;
+            margin: 2px 2px 2px 6px;
+        }
+
+        .price{
+            font-size: 30px;
+            font-weight: 500;
+            margin: 2px;
+            padding: 0 0 0 4px;
+        }
+
+        .bar-container{
+            margin: 10px 60% 60px 10px;
+        }
+        .bar{
+            width: 100%;
+            height: 7px;
+            background-color: lightgray;
+            border-radius: 10px;
+        }
+
+        
+        .bar-flex {
+            display: flex;
+            justify-content: space-between;
+            font-size: 80%;
+            margin: 10px 0 5px 0;
+            padding-top: 10px;
+        }
+        .bar > span{
+        }
+
+        .content{
+            margin-right: 30%;
+            display: flex;
+            justify-content: space-between;
+        }
+        div{
+            
+        }
+    </style>
+    <div class="currency">
+        @foreach(CryptoCurrencyData d in ViewBag.bitcoin)
+        {
+        <style>
+            .current-bar{
+                width: 44%;
+                background-color: red;
+            }
+        </style>
+        <div>
+            <h6>
+                <span class="rank">Rank #@d.rank</span>
+            </h6>
+            <div style="display:flex">
+                <img class="text-left" height="38" style="padding: 0px 5px 5px 5px; margin: 5px 5px 0 0;" src="@d.logo_url" />
+                <h1 style="margin-right: 7px">@d.name</h1>
+                <h1> (@d.symbol)</h1>
+            </div>
+
+            <h3 class="price">$@d.Price</h3>
+            <div class="bar-container">
+                <div class="bar ">
+                    <div class="current-bar"></div>
+                    <div class="bar-flex">
+                        <span style="float:left">$@d.Price</span>
+                        <span style="">All time range</span>
+                        <span style="float:right">$@d.High</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <span>Market Cap:&nbsp;@d.market_cap</span>
+                <span>Market Cap Dominance:&nbsp; @d.market_cap_dominance%</span>
+            </div>
+            <hr style="margin-right: 30%" />
+            <div class="content">
+                <span>Circulating Supply:&nbsp;@d.circulating_supply</span>
+                <span>Max Supply:&nbsp;@d.max_supply</span>
+            </div>
+            <hr style="margin-right: 30%; height: 0px;" />
+            <div class="content">
+                <span>All Time High:&nbsp;@d.High</span>
+                <span>Website:&nbsp;<a href="https://bitcoin.org/en/">bitcoin.org</a></span>
+            </div>
+            <hr style="margin-right: 30%; height: 0px;" />
+
+        </div>
+        }
+
+    <div class="currency-info">
+        <h2>What is Bitcoin?</h2>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bitcoin is a digital currency -- also called cryptocurrency -- that can
+            be traded for goods or services with vendors that accept Bitcoin as payment.
+            With Bitcoin, holders can buy, sell and exchange goods or services without
+            a central authority or bank as an intermediary.
+
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bitcoin is one of the most well-known virtual currencies today, with its
+            value rising dramatically since its launch in 2009. Satoshi Nakamoto,
+            the pseudonym of Bitcoin's creator, stated the purpose of Bitcoin is as
+            an electronic payment system that is based on cryptographic proof,
+            instead of trust. Some holders buy bitcoin as an investment, wanting it
+            to increase in value, while individuals and businesses use or accept
+            payments as currency. PayPal, for example, currently supports Bitcoin
+            transactions, and the country of El Salvador has accepted Bitcoin as a
+            currency.
+        </p>
+        <br />
+        <h2>How Does It Work?</h2>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bitcoin was built with a distributed digital record in mind called a blockchain. Blockchain is
+            a type of public ledger -- a digital system for recording transactions and related data in
+            multiple places at one time. Blocks in a blockchain are units that contain data about every
+            transaction, including the date, time, value, buyer and seller, and an identifying code for
+            each exchange.
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blockchain is designed to make it extremely difficult to hack the system or forge the data stored on it, thereby making it secure and immutable.
+            Each computer in a blockchain network has a copy of the ledger to prevent single points of failure. If one
+            block is changed, then all the other blocks in the distributed ledger must be changed. Blockchain is a
+            decentralized technology, meaning it is not controlled by any one organization. In addition, identifying codes
+            make it difficult to fraudulently produce blocks.
+        </p>
+        <div class="video-view">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/zovwM4jeYMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bitcoin is stored in a digital wallet application on a computer or smartphone. Cryptocurrency
+            wallets are among one of the best ways to keep bitcoin secure. There are also multiple types
+            of wallets. Software wallets enable users to keep only a small amount of bitcoin on a computer
+            or mobile phone for everyday use, with the balance kept in a separate offline wallet.
+            This safeguards the majority of a user's bitcoin from malware trying to intercept the password
+            used to access a wallet.
+        </p>
+        <h6>
+            <a href="https://bitcoin.org/en/">Know more about bitcoin</a>
+        </h6>
+    </div>
+    </div>
+</body>
+</html>

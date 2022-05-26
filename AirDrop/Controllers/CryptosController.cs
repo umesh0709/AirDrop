@@ -14,8 +14,27 @@ namespace AirDrop.Controllers
         public IActionResult Index()
         {
             // return View();
+            
 
             ViewBag.cryptoList = GetCurrencyData();
+            return View();
+        }
+
+        public IActionResult bitcoin()
+        {
+            ViewBag.bitcoin = BitcoinData();
+            return View();
+        }
+
+        public IActionResult ethereum()
+        {
+            ViewBag.ethereum = EthereumData();
+            return View();
+        }
+
+        public IActionResult binance()
+        {
+            ViewBag.binance = BinanceData();
             return View();
         }
 
@@ -40,7 +59,61 @@ namespace AirDrop.Controllers
             return null;
         }
 
+        public List<CryptoCurrencyData> BitcoinData()
+        {
+            using (HttpClient client = new HttpClient()) {
+                client.BaseAddress = new Uri("https://api.nomics.com/v1/");
+                
+                var responseTask = client.GetAsync("currencies/ticker?key=60554f1aac4ec6ecf9d934a78719834f353163ae&ids=BTC&interval=1d");
+                responseTask.Wait(10000);
 
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode) {
+                    Task<string> json = result.Content.ReadAsStringAsync();
+                    dynamic data = JsonConvert.DeserializeObject<List<CryptoCurrencyData>>(json.Result);
 
+                    return data;
+                }
+            }
+            return null;
+        }
+
+        public List<CryptoCurrencyData> EthereumData()
+        {
+            using (HttpClient client = new HttpClient()) {
+                client.BaseAddress = new Uri("https://api.nomics.com/v1/");
+
+                var responseTask = client.GetAsync("currencies/ticker?key=60554f1aac4ec6ecf9d934a78719834f353163ae&ids=ETH&interval=1d");
+                responseTask.Wait(10000);
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode) {
+                    Task<string> json = result.Content.ReadAsStringAsync();
+                    dynamic data = JsonConvert.DeserializeObject<List<CryptoCurrencyData>>(json.Result);
+
+                    return data;
+                }
+            }
+            return null;
+        }
+
+        public List<CryptoCurrencyData> BinanceData()
+        {
+            using (HttpClient client = new HttpClient()) {
+                client.BaseAddress = new Uri("https://api.nomics.com/v1/");
+
+                var responseTask = client.GetAsync("currencies/ticker?key=60554f1aac4ec6ecf9d934a78719834f353163ae&ids=BNB&interval=1d");
+                responseTask.Wait(10000);
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode) {
+                    Task<string> json = result.Content.ReadAsStringAsync();
+                    dynamic data = JsonConvert.DeserializeObject<List<CryptoCurrencyData>>(json.Result);
+
+                    return data;
+                }
+            }
+            return null;
+        }
     }
 }

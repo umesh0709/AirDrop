@@ -1,0 +1,166 @@
+﻿@using AirDrop.Models; 
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<html>
+<body>
+    <style>
+        p{
+            text-justify: auto;
+        }
+        .currency {
+            margin: 5%;
+            padding: 4px;
+
+        }
+
+        .currency-info{
+            margin:5% 5% 10px 0;
+            font-size: 22px;
+            
+        }
+
+            .currency-info > p {
+                text-align: justify;
+            }
+
+            .currency-info > h2 {
+                border-left: 8px solid black;
+                padding-left: 10px;
+                background-image: linear-gradient(to right, gray, #f2f2f2);
+                margin-right: 30%;
+            }
+
+        .rank{
+            background-color: gray;
+            color: white;
+            padding: 1px 3px 1px 3px;
+            border-radius: 4px;
+            margin: 2px 2px 2px 6px;
+        }
+
+        .price{
+            font-size: 30px;
+            font-weight: 500;
+            margin: 2px;
+            padding: 0 0 0 4px;
+        }
+
+        .bar-container{
+            margin: 10px 60% 60px 10px;
+        }
+        .bar{
+            width: 100%;
+            height: 7px;
+            background-color: lightgray;
+            border-radius: 10px;
+        }
+
+        
+        .bar-flex {
+            display: flex;
+            justify-content: space-between;
+            font-size: 80%;
+            margin: 10px 0 5px 0;
+            padding-top: 10px;
+        }
+        .bar > span{
+        }
+
+        .content{
+            margin-right: 30%;
+            display: flex;
+            justify-content: space-between;
+        }
+        div{
+            
+        }
+    </style>
+    <div class="currency">
+        @foreach(CryptoCurrencyData d in ViewBag.ethereum)
+        {
+        <style>
+            .current-bar{
+                width: 44%;
+                background-color: red;
+            }
+        </style>
+        <div>
+            <h6>
+                <span class="rank">Rank #@d.rank</span>
+            </h6>
+            <div style="display:flex">
+                <img class="text-left" height="38" style="padding: 0px 5px 5px 5px; margin: 5px 5px 0 0;" src="@d.logo_url" />
+                <h1 style="margin-right: 7px">@d.name</h1>
+                <h1> (@d.symbol)</h1>
+            </div>
+
+            <h3 class="price">$@d.Price</h3>
+            <div class="bar-container">
+                <div class="bar ">
+                    <div class="current-bar"></div>
+                    <div class="bar-flex">
+                        <span style="float:left">$@d.Price</span>
+                        <span style="">All time range</span>
+                        <span style="float:right">$@d.High</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <span>Market Cap:&nbsp;@d.market_cap</span>
+                <span>Market Cap Dominance:&nbsp; @d.market_cap_dominance%</span>
+            </div>
+            <hr style="margin-right: 30%" />
+            <div class="content">
+                <span>Circulating Supply:&nbsp;@d.circulating_supply</span>
+                <span>Max Supply:&nbsp;NA</span>
+            </div>
+            <hr style="margin-right: 30%; height: 0px;" />
+            <div class="content">
+                <span>All Time High:&nbsp;@d.High</span>
+                <span>Website:&nbsp;<a href="https://ethereum.org/en/">ethereum.org</a></span>
+            </div>
+            <hr style="margin-right: 30%; height: 0px;" />
+
+        </div>
+        }
+
+    <div class="currency-info">
+        <h2>What is Ethereum?</h2>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At its core, Ethereum is a 
+            decentralized global software platform powered by blockchain technology. It is most commonly
+            known for its native cryptocurrency, ether, or ETH. Ethereum can be used by anyone to create 
+            any secured digital technology they can think of. It has a token designed for use in the 
+            blockchain network, but it can also be used by participats as a method to pay for work done
+            on the blockchain.
+
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ethereum is designed to be scalable, programmable, secure, and decentralized. It is the blockchain of choice for developers and enterprises, who are creating technology based upon it to change the way many industries operate and the way we go about our daily lives.
+        </p>
+        <br />
+        <h2>How Does It Work?</h2>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ethereum, like other cryptocurrencies, is blockchain technology. Imagine a very long chain of blocks—all of the information contained in each block is added to every newly-created block along with the new data. Throughout the network is a distributed and identical copy of the blockchain. This blockchain is validated by a network of automated programs that reach a consensus on the validity of transaction information. No changes can be made to the blockchain unless the network reaches a consensus, which makes it very secure.
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consensus is reached using a protocol referred to as a consensus mechanism. Ethereum uses the proof-of-work protocol, where a network of participants runs software that attempts to prove that an encrypted number is valid. This is called mining, and the first miner to prove the number is rewarded in ether. A new block is opened on the blockchain, information from the previous block is encrypted and placed into the new block along with new data, and the mining process begins again.
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At some point, Ethereum will be moving to another consensus protocol called proof-of-stake, where ETH owners "stake" their ether.2 Staking ether keeps it from being used in transactions and works as an incentive—it is used as collateral for the privilege of mining.12 Mining will work differently under this protocol because it won't require everyone on the network to compete for the rewards. Instead, the protocol will randomly choose users with staked ether to verify the transactions. These validators are then rewarded in ether for their work.
+        </p>
+        <div class="video-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jxLkbJozKbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At some point, Ethereum will be moving to another consensus protocol called proof-of-stake, where ETH owners "stake" their ether. Staking ether keeps it from being used in transactions and works as an incentive—it is used as collateral for the privilege of mining. Mining will work differently under this protocol because it won't require everyone on the network to compete for the rewards. Instead, the protocol will randomly choose users with staked ether to verify the transactions. These validators are then rewarded in ether for their work.
+        </p>
+        <h6>
+            <a href="https://ethereum.org/en/">Know more about ethereum</a>
+        </h6>
+    </div>
+    </div>
+</body>
+</html>

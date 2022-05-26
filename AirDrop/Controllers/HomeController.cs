@@ -24,6 +24,7 @@ using Newtonsoft.Json.Linq;
 using NewsAPI;
 using NewsAPI.Models;
 using NewsAPI.Constants;
+using System.Web.Helpers;
 
 
 namespace AirDrop.Controllers
@@ -33,6 +34,8 @@ namespace AirDrop.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _db;
         MultipleTables list = new MultipleTables();
+
+        
 
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
@@ -46,7 +49,7 @@ namespace AirDrop.Controllers
             //  Console.Read();
 
             ICoinmarketcapClient client = new CoinmarketcapClient("5a588ead - c082 - 4c4b - a9e2 - 390e69e55165");
-           
+            Chart ch = new Chart(width: 600, height: 400);
         }
 
 
@@ -62,6 +65,8 @@ namespace AirDrop.Controllers
             ViewBag.cryptoCurrencyData = GetCurrencyData();
             ViewBag.currentAirdropsData = GetCurrentAirdropsData();
             ViewBag.tweets = Tweets();
+            ViewBag.topCurrencyData = TopCurrencyData();
+            ViewBag.news =  (IEnumerable)News();
          //   ViewBag.trending = CoinGeckoTrending();
             return View();
         }
@@ -97,6 +102,43 @@ namespace AirDrop.Controllers
             return cryptoInfo;
         }
 
+        public List<CryptoNews> News()
+        {
+           /* var client = new HttpClient();
+            var request = new HttpRequestMessage {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri("https://crypto-news-live3.p.rapidapi.com/news"),
+                Headers =
+                {
+            { "X-RapidAPI-Host", "crypto-news-live3.p.rapidapi.com" },
+            { "X-RapidAPI-Key", "4b38da2905msh6589d28a55fb3e4p14c407jsn562527956f28" },
+            },
+                };
+            using (var response = await client.SendAsync(request)) {
+                response.EnsureSuccessStatusCode();
+                var body = await response.Content.ReadAsStringAsync();
+                CryptoNews cryptoNews = JsonConvert.DeserializeObject<CryptoNews>(body);
+                return cryptoNews;
+            }
+
+            return null;*/
+
+            using (var client = new HttpClient()) {
+                client.BaseAddress = new Uri("https://cryptocurrency-news-tracker.herokuapp.com/");
+                var response = client.GetAsync("news");
+                response.Wait(10000);
+
+                var result = response.Result;
+
+                if (result.IsSuccessStatusCode) {
+                    Task<string> json = result.Content.ReadAsStringAsync();
+                    dynamic cryptoNews = JsonConvert.DeserializeObject<List<CryptoNews>>(json.Result);
+                    return cryptoNews;
+                }
+            }
+            return null;
+        }
+
         public List<CryptoCurrencyData> GetCurrencyData()
         {
             List<CryptoCurrencyData> currency = new List<CryptoCurrencyData>();
@@ -115,6 +157,26 @@ namespace AirDrop.Controllers
                 }
             }
                 return null;
+        }
+
+        public List<CryptoCurrencyData> TopCurrencyData()
+        {
+            List<CryptoCurrencyData> currency = new List<CryptoCurrencyData>();
+
+            using (var client = new HttpClient()) {
+                client.BaseAddress = new Uri("https://api.nomics.com/v1/");
+                var responseTask = client.GetAsync("currencies/ticker?key=60554f1aac4ec6ecf9d934a78719834f353163ae&ids=BTC,ETH,BNB&interval=1d"
+                   );
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode) {
+                    Task<string> json = result.Content.ReadAsStringAsync();
+                    dynamic currencyData = JsonConvert.DeserializeObject<List<CryptoCurrencyData>>(json.Result);
+                    return currencyData;
+                }
+            }
+            return null;
         }
 
         public List<_1d> DailyChange()
